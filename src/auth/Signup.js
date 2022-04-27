@@ -5,51 +5,54 @@ import Checkbox from '@mui/material/Checkbox';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { Container } from '@mui/material';
-import { makeStyles } from '@mui/material/styles';
 import { Avatar } from '@mui/material';
-import { Button } from '@mui/material';
+import { Button, styled } from '@mui/material';
 import { Grid } from '@mui/material';
 import { Link } from '@mui/material';
 import LockResetIcon from '@mui/icons-material/LockReset';
 
-const useStyles = makeStyles(theme => ({
-  "@global": {
-    body: {
-      backgroundColor: theme.palette.common.white
-    }
-  },
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
-  },
-  form: {
-    width: "100%",
-    marginTop: theme.spacing(3)
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
-  }
-}));
+// const useStyles = makeStyles(theme => ({
+//   "@global": {
+//     body: {
+//       backgroundColor: theme.palette.common.white
+//     }
+//   },
+//   paper: {
+//     marginTop: theme.spacing(8),
+//     display: "flex",
+//     flexDirection: "column",
+//     alignItems: "center"
+//   },
+//   avatar: {
+//     margin: theme.spacing(1),
+//     backgroundColor: theme.palette.secondary.main
+//   },
+//   form: {
+//     width: "100%",
+//     marginTop: theme.spacing(3)
+//   },
+//   submit: {
+//     margin: theme.spacing(3, 0, 2)
+//   }
+// }));
 
 export default function Signup() {
-  const classes = useStyles();
+  const Submit = styled(Button)({
+    margin:"5",
+    background:"skyblue"
+  })
+  
   return (
      <Container component="main" maxWidth="xs">
        <CssBaseline />
-       <div className={classes.paper}>
-         <Avatar className={classes.avatar}>
+       <div>
+         <Avatar>
            <LockResetIcon />
          </Avatar>
          <Typography component="h1" variant='h5'>
              Sign Up
          </Typography>
-         <form className={classes.form}>
+         <form>
            <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField 
@@ -109,10 +112,11 @@ export default function Signup() {
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
+
           >
             Sign Up
           </Button>
+          <Submit>Our button</Submit>
           <Grid container justify="flex-end">
             <Grid item>
               <Link href="/" variant="body2">
